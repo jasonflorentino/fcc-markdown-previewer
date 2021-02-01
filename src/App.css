@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+* {
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body, #root, #root>div {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.35rem;
+    background-color: #eeeeee;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#Previewer {
+    display: flex;
+    width: 94%;
+    height: 70%;
 }
 
-.App-link {
-  color: #61dafb;
+.Previewer__section {
+    width: 50%;
+    margin: 0 1rem;
+    padding: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#inputForm > * {
+    display: block;
+    margin-bottom: .5rem;
+}
+
+#editor {
+    width: 100%;
+    height: 30rem;
+    padding: .75rem .9rem;
+    resize: vertical;
+    overflow: auto;
+    font-family: inherit;
+    font-size: .9rem;
+    line-height: 1.25rem;
+    border-radius: .4rem;
+    border: 1px solid #bbb;
+    box-shadow: 0 .3rem .8rem 0 rgba(0,0,0,.25);
+}
+
+#preview {
+    overflow:auto;
 }
