@@ -24,16 +24,43 @@ html, body, #root, #root>div {
     height: 70%;
 }
 
+#inputForm {
+    position: sticky;
+    top: 100px;
+}
+
+.Previewer__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 1rem 0;
+    position: relative;
+}
+
+.Previewer__header > p {
+    margin: 0;
+}
+
+.Previewer__button {
+    display: block;
+    padding: .5rem .9rem;
+}
+
+.Previewer__success {
+    font-size: .8rem;
+    background-color: rgb(53, 177, 49);
+    color: white;
+    padding: .1rem .5rem;
+    border-radius: .4rem;
+}
+
 .Previewer__section {
     width: 50%;
     margin: 0 1rem;
     padding: 1rem;
 }
 
-#inputForm > * {
-    display: block;
-    margin-bottom: .5rem;
-}
 
 #editor {
     width: 100%;
@@ -50,5 +77,6 @@ html, body, #root, #root>div {
 }
 
 #preview {
-    overflow:auto;
+    overflow:scroll;
+    overflow-wrap: break-word;
 }

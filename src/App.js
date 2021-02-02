@@ -49,7 +49,8 @@ class Previewer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: defaultMarkdown
+      value: defaultMarkdown,
+      copySuccess: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -65,14 +66,33 @@ class Previewer extends React.Component {
     event.preventDefault();
   }
 
+  copyToClipboard = () => {
+    const elem = this.textArea
+    elem.select()
+    document.execCommand("copy")
+    this.setState({copySuccess: true})
+    setTimeout(() => {
+      this.setState({copySuccess: false});
+    }, 2000)
+  }
+
   render() {
     return (
       <div id="Previewer">
-        <form id="inputForm" className="Previewer__section" onSubmit={this.handleSubmit}>
-          <label>Write or paste markdown here:</label>
-          <textarea id="editor" value={this.state.value} onChange={this.handleChange} />
+        <div id="inputForm" className="Previewer__section">
+          <div className="Previewer__header">
+            <p>Write or paste markdown here</p>
+            {
+              this.state.copySuccess ?
+              <div className="Previewer__success">
+                Copied to Clipboard!
+              </div> : null
+            }
+            <button className="Previewer__button" onClick={() => this.copyToClipboard()}>Copy</button>
+          </div>
+          <textarea id="editor" value={this.state.value} onChange={this.handleChange} ref={(textarea) => this.textArea = textarea}/>
           {/* <input type="submit" value="Submit" /> */}
-        </form>
+        </div>
         <Preview markdown={this.state.value} />
       </div>
     );
