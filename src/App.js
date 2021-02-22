@@ -95,7 +95,7 @@ class Previewer extends React.Component {
         <div id="stickyContainer">
           <div id="inputForm" className="Previewer__section">
             <div className="Previewer__header">
-              <p class="Previewer__title">⭐️  Welcome to my markdown previewer</p>
+              <p class="Previewer__title">💫  Welcome to my markdown previewer</p>
               {
                 this.state.copySuccess ?
                 <div className="Previewer__success">
