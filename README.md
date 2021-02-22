@@ -1,5 +1,5 @@
 # Downsview Mark
-*A markdown previewer made for freecodecamp.org's frontend libraries course*
+*A markdown previewer made with React for freecodecamp.org's frontend libraries course*
 
 **[Click here](https://codepen.io/jasonflorentino/full/vYyeXpG) to visit a live page.**
 
